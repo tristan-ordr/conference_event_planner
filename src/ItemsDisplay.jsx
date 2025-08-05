@@ -1,5 +1,5 @@
 import React from 'react';
-const ItemsDisplay = ({ items }) => {
+const ItemsDisplay = ({ items, numberOfPeople }) => {
     console.log(items);
     return <>
         <div className="display_box1">
@@ -20,7 +20,7 @@ const ItemsDisplay = ({ items }) => {
                             <td>${item.cost}</td>
                             <td>
                                 {item.type === "meals" || item.numberOfPeople
-                                ? ` For ${numberOfPeople} people`
+                                ? ` For ${numberOfPeople}  ${ numberOfPeople == 1 ? "person" : "people"}`
                                 : item.quantity}
                             </td>
                             <td>{item.type === "meals" || item.numberOfPeople
